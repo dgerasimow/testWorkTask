@@ -5,12 +5,12 @@
 //  Created by Danil Gerasimov on 01.10.2021.
 //
 
-import Foundation
+import UIKit
 
 
-struct RegionElement: Decodable {
+struct ParsedObject: Decodable {
     let id: String
-    let parentID: Int?
+    let parentID: String?
     let name: String
-    let areas: [RegionElement]?
+    let areas: [ParsedObject]
 }

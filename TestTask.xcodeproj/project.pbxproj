@@ -14,7 +14,10 @@
 		EB273F4527066D550095319B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB273F4327066D550095319B /* Main.storyboard */; };
 		EB273F4727066D570095319B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB273F4627066D570095319B /* Assets.xcassets */; };
 		EB273F4A27066D570095319B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB273F4827066D570095319B /* LaunchScreen.storyboard */; };
-		EB273F532706723E0095319B /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB273F522706723E0095319B /* Country.swift */; };
+		EB273F532706723E0095319B /* ParsedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB273F522706723E0095319B /* ParsedObject.swift */; };
+		EB38BBF8270895C800D508D1 /* LocationEntityDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB38BBF7270895C800D508D1 /* LocationEntityDTO.swift */; };
+		EB9F9BA327075AEF004288A9 /* RegionDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9F9BA227075AEF004288A9 /* RegionDatabase.swift */; };
+		EB9F9BA627075EE2004288A9 /* SQLiteCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9F9BA527075EE2004288A9 /* SQLiteCommands.swift */; };
 		EBFA8BA22706DA940045E7AB /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFA8BA12706DA940045E7AB /* APIRequest.swift */; };
 /* End PBXBuildFile section */
 
@@ -89,7 +92,10 @@
 		EB273F4627066D570095319B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EB273F4927066D570095319B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EB273F4B27066D570095319B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EB273F522706723E0095319B /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		EB273F522706723E0095319B /* ParsedObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParsedObject.swift; sourceTree = "<group>"; };
+		EB38BBF7270895C800D508D1 /* LocationEntityDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationEntityDTO.swift; sourceTree = "<group>"; };
+		EB9F9BA227075AEF004288A9 /* RegionDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionDatabase.swift; sourceTree = "<group>"; };
+		EB9F9BA527075EE2004288A9 /* SQLiteCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteCommands.swift; sourceTree = "<group>"; };
 		EBFA8BA12706DA940045E7AB /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		EBFEAA3A2707504100FB4598 /* SQLite.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SQLite.xcodeproj; path = "../../../Downloads/SQLite.swift-master/SQLite.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -145,11 +151,13 @@
 		EB273F3C27066D550095319B /* TestTask */ = {
 			isa = PBXGroup;
 			children = (
-				EB5EB1D5270714FE0001391C /* Database */,
-				EB273F51270672200095319B /* Classes */,
+				EBA1A05D27087705000B64BD /* cells */,
+				EB9F9BA427075E90004288A9 /* SQLite scripts */,
+				EB9F9BA127075AB0004288A9 /* models */,
+				EB9F9BA027075AA0004288A9 /* controllers */,
+				EB273F51270672200095319B /* helpers */,
 				EB273F3D27066D550095319B /* AppDelegate.swift */,
 				EB273F3F27066D550095319B /* SceneDelegate.swift */,
-				EB273F4127066D550095319B /* ViewController.swift */,
 				EB273F4327066D550095319B /* Main.storyboard */,
 				EB273F4627066D570095319B /* Assets.xcassets */,
 				EB273F4827066D570095319B /* LaunchScreen.storyboard */,
@@ -158,20 +166,45 @@
 			path = TestTask;
 			sourceTree = "<group>";
 		};
-		EB273F51270672200095319B /* Classes */ = {
+		EB273F51270672200095319B /* helpers */ = {
 			isa = PBXGroup;
 			children = (
-				EB273F522706723E0095319B /* Country.swift */,
 				EBFA8BA12706DA940045E7AB /* APIRequest.swift */,
+				EB9F9BA227075AEF004288A9 /* RegionDatabase.swift */,
 			);
-			path = Classes;
+			path = helpers;
 			sourceTree = "<group>";
 		};
-		EB5EB1D5270714FE0001391C /* Database */ = {
+		EB9F9BA027075AA0004288A9 /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				EB273F4127066D550095319B /* ViewController.swift */,
+			);
+			path = controllers;
+			sourceTree = "<group>";
+		};
+		EB9F9BA127075AB0004288A9 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				EB273F522706723E0095319B /* ParsedObject.swift */,
+				EB38BBF7270895C800D508D1 /* LocationEntityDTO.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		EB9F9BA427075E90004288A9 /* SQLite scripts */ = {
+			isa = PBXGroup;
+			children = (
+				EB9F9BA527075EE2004288A9 /* SQLiteCommands.swift */,
+			);
+			path = "SQLite scripts";
+			sourceTree = "<group>";
+		};
+		EBA1A05D27087705000B64BD /* cells */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Database;
+			path = cells;
 			sourceTree = "<group>";
 		};
 		EBFEAA3B2707504100FB4598 /* Products */ = {
@@ -357,9 +390,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EB273F532706723E0095319B /* Country.swift in Sources */,
+				EB273F532706723E0095319B /* ParsedObject.swift in Sources */,
+				EB9F9BA327075AEF004288A9 /* RegionDatabase.swift in Sources */,
 				EB273F4227066D550095319B /* ViewController.swift in Sources */,
 				EB273F3E27066D550095319B /* AppDelegate.swift in Sources */,
+				EB38BBF8270895C800D508D1 /* LocationEntityDTO.swift in Sources */,
+				EB9F9BA627075EE2004288A9 /* SQLiteCommands.swift in Sources */,
 				EBFA8BA22706DA940045E7AB /* APIRequest.swift in Sources */,
 				EB273F4027066D550095319B /* SceneDelegate.swift in Sources */,
 			);

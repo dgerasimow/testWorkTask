@@ -78,7 +78,7 @@ extension LocationListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let countryArray: [LocationEntityDTO] = SQLiteCommands.presentRowsInRegionTable(requiredTable: Table("country"))!
-            SQLiteCommands.deleteSpecificRow(requiredTable: Table("Country"), deleteID: countryArray[indexPath.row].id)
+            SQLiteCommands.deleteSpecificRow(requiredTable: Table("country"), deleteID: countryArray[indexPath.row].id)
             locationTableView.deleteRows(at: [indexPath], with: .automatic)
         }
     }

@@ -25,11 +25,20 @@ class RegionViewController: UIViewController {
         regionTableView.tableFooterView = UIView()
         regionTableView.dataSource = self
         regionTableView.delegate = self
+        regionTableView.allowsSelectionDuringEditing = true
+        
+        navigationItem.rightBarButtonItem = editButtonItem
         
     }
     
     func configure(id: String) {
         parentID = id
+    }
+    
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: true)
+        
+        regionTableView.setEditing(editing, animated: true)
     }
 
 }
@@ -50,6 +59,13 @@ extension RegionViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         regionTableView.deselectRow(at: indexPath, animated: true)
+        if regionTableView.isEditing {
+            guard let regionArray = SQLiteCommands.selectAllSpecificRowByParentID(requiredTable: Table("region"), id: parentID) else { return }
+            guard let editingViewController = storyboard?.instantiateViewController(withIdentifier: "EditingViewController") as? EditingViewController else { return }
+            editingViewController.configure(table: Table("region"), id: regionArray[indexPath.row].id)
+            editingViewController.regionDelegate = self
+            present(editingViewController, animated: true)
+        } else {
         
         guard let cityViewController = storyboard?.instantiateViewController(withIdentifier: "CityViewController") as? CityViewController else { return }
         guard let regions = SQLiteCommands.selectAllSpecificRowByParentID(requiredTable: Table("region"), id: parentID) else { return }
@@ -64,7 +80,20 @@ extension RegionViewController: UITableViewDataSource, UITableViewDelegate {
         cityViewController.configure(id: regions[indexPath.row].id)
         navigationController?.pushViewController(cityViewController, animated: true)
     }
-    
+        
+}
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            guard let regionArray = SQLiteCommands.selectAllSpecificRowByParentID(requiredTable: Table("region"), id: parentID) else { return }
+            SQLiteCommands.deleteSpecificRow(requiredTable: Table("region"), deleteID: regionArray[indexPath.row].id)
+            regionTableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+    }
+}
+extension RegionViewController: RegionViewControllerDelegate {
+    func updateView() {
+        regionTableView.reloadData()
+    }
     
     
 }

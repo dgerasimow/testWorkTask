@@ -121,7 +121,7 @@ class SQLiteCommands {
                 
                 //add to an array
                 locationArray.append(locationObject)
-//                print("id: \(region[id]), parentID: \(region[parent_id]), name: \(region[name])")
+
             }
         } catch {
             print("Present row error: \(error)")
@@ -159,7 +159,6 @@ class SQLiteCommands {
             return nil
         }
         let table = requiredTable.where(self.id == id)
-        print(table)
         var regionsArray = [LocationEntityDTO]()
         
         do {
@@ -184,7 +183,7 @@ class SQLiteCommands {
             return nil
         }
         let table = requiredTable.where(parent_id == id)
-        print(table)
+        
         var regionsArray = [LocationEntityDTO]()
         
         do {

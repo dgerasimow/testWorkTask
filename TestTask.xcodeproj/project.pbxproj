@@ -10,14 +10,20 @@
 		C5C006B6F69B34139601F2AB /* libPods-TestTask.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A25A4500265717A4814E43E /* libPods-TestTask.a */; };
 		EB273F3E27066D550095319B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB273F3D27066D550095319B /* AppDelegate.swift */; };
 		EB273F4027066D550095319B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB273F3F27066D550095319B /* SceneDelegate.swift */; };
-		EB273F4227066D550095319B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB273F4127066D550095319B /* ViewController.swift */; };
+		EB273F4227066D550095319B /* LocationListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB273F4127066D550095319B /* LocationListViewController.swift */; };
 		EB273F4527066D550095319B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB273F4327066D550095319B /* Main.storyboard */; };
 		EB273F4727066D570095319B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB273F4627066D570095319B /* Assets.xcassets */; };
 		EB273F4A27066D570095319B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB273F4827066D570095319B /* LaunchScreen.storyboard */; };
 		EB273F532706723E0095319B /* ParsedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB273F522706723E0095319B /* ParsedObject.swift */; };
 		EB38BBF8270895C800D508D1 /* LocationEntityDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB38BBF7270895C800D508D1 /* LocationEntityDTO.swift */; };
-		EB9F9BA327075AEF004288A9 /* RegionDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9F9BA227075AEF004288A9 /* RegionDatabase.swift */; };
+		EB9F9BA327075AEF004288A9 /* LocationDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9F9BA227075AEF004288A9 /* LocationDatabase.swift */; };
 		EB9F9BA627075EE2004288A9 /* SQLiteCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9F9BA527075EE2004288A9 /* SQLiteCommands.swift */; };
+		EBBF42A92709B8EA0006AF36 /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBF42A82709B8EA0006AF36 /* LocationTableViewCell.swift */; };
+		EBBF42B12709D0200006AF36 /* RegionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBF42B02709D0200006AF36 /* RegionViewController.swift */; };
+		EBBF42B32709D0460006AF36 /* RegionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBF42B22709D0460006AF36 /* RegionTableViewCell.swift */; };
+		EBBF42B52709E5740006AF36 /* CityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBF42B42709E5740006AF36 /* CityViewController.swift */; };
+		EBBF42B72709E58D0006AF36 /* CityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBF42B62709E58D0006AF36 /* CityTableViewCell.swift */; };
+		EBBF42B92709FCDC0006AF36 /* EditingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBF42B82709FCDC0006AF36 /* EditingViewController.swift */; };
 		EBFA8BA22706DA940045E7AB /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFA8BA12706DA940045E7AB /* APIRequest.swift */; };
 /* End PBXBuildFile section */
 
@@ -87,15 +93,21 @@
 		EB273F3A27066D550095319B /* TestTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB273F3D27066D550095319B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EB273F3F27066D550095319B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		EB273F4127066D550095319B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EB273F4127066D550095319B /* LocationListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationListViewController.swift; sourceTree = "<group>"; };
 		EB273F4427066D550095319B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EB273F4627066D570095319B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EB273F4927066D570095319B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EB273F4B27066D570095319B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB273F522706723E0095319B /* ParsedObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParsedObject.swift; sourceTree = "<group>"; };
 		EB38BBF7270895C800D508D1 /* LocationEntityDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationEntityDTO.swift; sourceTree = "<group>"; };
-		EB9F9BA227075AEF004288A9 /* RegionDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionDatabase.swift; sourceTree = "<group>"; };
+		EB9F9BA227075AEF004288A9 /* LocationDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDatabase.swift; sourceTree = "<group>"; };
 		EB9F9BA527075EE2004288A9 /* SQLiteCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteCommands.swift; sourceTree = "<group>"; };
+		EBBF42A82709B8EA0006AF36 /* LocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
+		EBBF42B02709D0200006AF36 /* RegionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionViewController.swift; sourceTree = "<group>"; };
+		EBBF42B22709D0460006AF36 /* RegionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionTableViewCell.swift; sourceTree = "<group>"; };
+		EBBF42B42709E5740006AF36 /* CityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityViewController.swift; sourceTree = "<group>"; };
+		EBBF42B62709E58D0006AF36 /* CityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTableViewCell.swift; sourceTree = "<group>"; };
+		EBBF42B82709FCDC0006AF36 /* EditingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditingViewController.swift; sourceTree = "<group>"; };
 		EBFA8BA12706DA940045E7AB /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		EBFEAA3A2707504100FB4598 /* SQLite.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SQLite.xcodeproj; path = "../../../Downloads/SQLite.swift-master/SQLite.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -170,7 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				EBFA8BA12706DA940045E7AB /* APIRequest.swift */,
-				EB9F9BA227075AEF004288A9 /* RegionDatabase.swift */,
+				EB9F9BA227075AEF004288A9 /* LocationDatabase.swift */,
 			);
 			path = helpers;
 			sourceTree = "<group>";
@@ -178,7 +190,10 @@
 		EB9F9BA027075AA0004288A9 /* controllers */ = {
 			isa = PBXGroup;
 			children = (
-				EB273F4127066D550095319B /* ViewController.swift */,
+				EBBF42B02709D0200006AF36 /* RegionViewController.swift */,
+				EB273F4127066D550095319B /* LocationListViewController.swift */,
+				EBBF42B42709E5740006AF36 /* CityViewController.swift */,
+				EBBF42B82709FCDC0006AF36 /* EditingViewController.swift */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -203,6 +218,9 @@
 		EBA1A05D27087705000B64BD /* cells */ = {
 			isa = PBXGroup;
 			children = (
+				EBBF42A82709B8EA0006AF36 /* LocationTableViewCell.swift */,
+				EBBF42B22709D0460006AF36 /* RegionTableViewCell.swift */,
+				EBBF42B62709E58D0006AF36 /* CityTableViewCell.swift */,
 			);
 			path = cells;
 			sourceTree = "<group>";
@@ -390,14 +408,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBBF42B12709D0200006AF36 /* RegionViewController.swift in Sources */,
 				EB273F532706723E0095319B /* ParsedObject.swift in Sources */,
-				EB9F9BA327075AEF004288A9 /* RegionDatabase.swift in Sources */,
-				EB273F4227066D550095319B /* ViewController.swift in Sources */,
+				EB9F9BA327075AEF004288A9 /* LocationDatabase.swift in Sources */,
+				EBBF42B92709FCDC0006AF36 /* EditingViewController.swift in Sources */,
+				EB273F4227066D550095319B /* LocationListViewController.swift in Sources */,
+				EBBF42A92709B8EA0006AF36 /* LocationTableViewCell.swift in Sources */,
 				EB273F3E27066D550095319B /* AppDelegate.swift in Sources */,
 				EB38BBF8270895C800D508D1 /* LocationEntityDTO.swift in Sources */,
 				EB9F9BA627075EE2004288A9 /* SQLiteCommands.swift in Sources */,
+				EBBF42B72709E58D0006AF36 /* CityTableViewCell.swift in Sources */,
 				EBFA8BA22706DA940045E7AB /* APIRequest.swift in Sources */,
 				EB273F4027066D550095319B /* SceneDelegate.swift in Sources */,
+				EBBF42B32709D0460006AF36 /* RegionTableViewCell.swift in Sources */,
+				EBBF42B52709E5740006AF36 /* CityViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

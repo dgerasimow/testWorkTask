@@ -10,7 +10,7 @@ import UIKit
 
 struct ParsedObject: Decodable {
     let id: String
-    let parentID: String?
+    let parent_id: String?
     let name: String
     let areas: [ParsedObject]
 }

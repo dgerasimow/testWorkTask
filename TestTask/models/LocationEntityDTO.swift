@@ -9,6 +9,6 @@ import Foundation
 
 struct LocationEntityDTO {
     let id: String
-    let parentID: String
+    let parent_id: String
     let name: String
 }

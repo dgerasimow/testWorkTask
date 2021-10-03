@@ -5,26 +5,34 @@
 //  Created by Danil Gerasimov on 01.10.2021.
 //
 
-import Foundation
+import UIKit
 import SQLite
 
-class RegionRequest {
+protocol LocationListViewControllerDelegate: AnyObject {
+    func updateView()
+}
+
+class LocationRequest {
     let url: URL
     var request: URLRequest
+    static weak var delegate: LocationListViewControllerDelegate?
     init() {
         url = URL(string: "https://api.hh.ru/areas")!
         request = URLRequest(url: url)
     }
 
+    func makeAPIRequest() {
+        addApiResponseDataToDatabase()
+    }
     
-    func getRegionRequest(completion: @escaping ([ParsedObject]?) -> Void) {
+    private func getAPIRequest(completion: @escaping ([ParsedObject]?) -> Void) {
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
         let dataTask = URLSession.shared.dataTask(with: url) { (data, repsonse, error) in
             if let data = data {
                 do {
                 let regions = try JSONDecoder().decode([ParsedObject].self, from: data)
-//                    print(regions)
+//                    print(regions[0].areas[0].id)
                     completion(regions)
                 } catch {
                     print("Invalid response: \(error)")
@@ -45,8 +53,12 @@ class RegionRequest {
     private func addApiResponseDataToDatabase() {
         
         //adding api response data
-        getRegionRequest { region in
+        getAPIRequest { region in
             self.save(parsedDataArray: region!, c: 0)
+            DispatchQueue.main.async {
+                LocationRequest.delegate?.updateView()
+            }
+        
         }
         
     }
@@ -57,13 +69,13 @@ class RegionRequest {
         for obj in parsedDataArray {
             switch counter {
             case 1:
-                RegionDatabase.sharedInstance.insertData(table: Table("Country"), locationValues: LocationEntityDTO(id: obj.id, parentID: obj.parentID!, name: obj.name))
+                LocationDatabase.sharedInstance.insertData(table: Table("country"), locationValues: LocationEntityDTO(id: obj.id, parent_id: obj.parent_id ?? "", name: obj.name))
                 save(parsedDataArray: obj.areas, c: counter)
-            case 2:
-                RegionDatabase.sharedInstance.insertData(table: Table("Region"), locationValues: LocationEntityDTO(id: obj.id, parentID: obj.parentID!, name: obj.name))
+            case 2:                
+                LocationDatabase.sharedInstance.insertData(table: Table("region"), locationValues: LocationEntityDTO(id: obj.id, parent_id: obj.parent_id ?? "" , name: obj.name))
                 save(parsedDataArray: obj.areas, c: counter)
             case 3:
-                RegionDatabase.sharedInstance.insertData(table: Table("City"), locationValues: LocationEntityDTO(id: obj.id, parentID: obj.parentID!, name: obj.name))
+                LocationDatabase.sharedInstance.insertData(table: Table("city"), locationValues: LocationEntityDTO(id: obj.id, parent_id: obj.parent_id ?? "", name: obj.name))
             default:
                 return
             }
